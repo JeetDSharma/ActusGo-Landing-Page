@@ -12,6 +12,7 @@ import AuthHeader from "./components/Header/AuthHeader/index.jsx";
 import Signup from "./pages/auth/signup.jsx";
 import Login from "./pages/auth/signin.jsx";
 import SmallFooter from "./components/Footer/SmallFooter/SmallFooter.jsx";
+import { ThemeProvider } from "./context/ThemeContext.jsx";
 
 const isInsideDashboardFolder = window.location.pathname.includes("/dashboard");
 const isInsideAuthFolder = window.location.pathname.includes("/auth");
@@ -19,7 +20,9 @@ const isInsideAuthFolder = window.location.pathname.includes("/auth");
 if (!isInsideDashboardFolder) {
   createRoot(document.getElementById("root")).render(
     <StrictMode>
+        <ThemeProvider>
       <Router>
+
         {isInsideDashboardFolder ? null : <Announce />}
         {isInsideAuthFolder ?  <AuthHeader /> :  <Header />}
         <Routes>
@@ -31,6 +34,7 @@ if (!isInsideDashboardFolder) {
         </Routes>
         {isInsideAuthFolder ? <SmallFooter /> : <Footer />}
       </Router>
+        </ThemeProvider>
     </StrictMode>,
     (document.getElementById("root").className =
       "dark:bg-black bg-yellow-50/70"),
