@@ -4,19 +4,8 @@ import { useTheme } from "../context/ThemeContext";
 
 const DarkModeSwitcher = () => {
   const { i18n } = useTranslation();
-  const [darkMode, setDarkMode] = useState(false);
   const {theme,setTheme} = useTheme()
-  // useEffect(() => {
-  //   // Apply the dark mode class to the body or another root element
-  //   if (darkMode) {
-  //     document.body.classList.add("dark");
-  //     localStorage.setItem('theme', theme);
-  //   } else {
-  //     document.body.classList.remove("dark");
-  //   }
-  // }, [darkMode]);
   const toggleDarkMode = () => {
-    // setDarkMode((prevMode) => !prevMode);
     setTheme(theme === 'light' ? 'dark' : 'light');
     
   };

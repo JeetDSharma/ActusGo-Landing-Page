@@ -8,7 +8,6 @@ import theme from '@material-tailwind/react/theme';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  // const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
   const {theme, setTheme} = useTheme()
   const [featuresOpen, setFeaturesOpen] = useState(false);
   const { t, i18n } = useTranslation();

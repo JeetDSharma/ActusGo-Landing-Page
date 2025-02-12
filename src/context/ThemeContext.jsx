@@ -17,12 +17,8 @@ export const ThemeProvider = ({children}) => {
         </ThemeContext.Provider>
     )
 }
-
-// export const useTheme = () => useContext(ThemeContext);
 export const useTheme = () => {
     const context = useContext(ThemeContext);
-    
-    // 🚀 Fix: Prevent using useTheme() outside ThemeProvider
     if (!context) {
       throw new Error("useTheme must be used within a ThemeProvider");
     }
