@@ -51,13 +51,14 @@ const Header80Animation = () => {
                                 scale: scaleTransform,
                                 x: index % 2 === 0 ? xLeftTransform : xRightTransform,
                             }}
-                            className={clsx("relative h-[35vw] max-w-full pt-[60%] sm:h-auto", {
+                            className={clsx("relative h-[35vw] max-w-full pt-[60%] sm:h-auto z-[0]", {
                                 "left-[19vw] w-[30vw] md:w-[28vw] lg:w-[22vw]": index === 0,
                                 "left-[52vw] mt-[-46vw] lg:left-[58vw] lg:w-[22vw]": index === 1,
                                 "left-[14vw] mt-[-35vw] lg:w-[20vw]": index === 2,
                                 "left-[64vw] mt-[-45vw] lg:w-[18vw]": index === 3,
-                                "left-[44vw] mt-[-35vw] lg:w-[18vw]": index === 4,
-                                "left-[34vw] mt-[-40vw] lg:w-[18vw]": index === 5,
+                                "left-[44vw] mt-[-40vw] lg:w-[18vw]": index === 4,
+                                "left-[34vw] mt-[-40] lg:w-[18vw]": index === 5,
+                                
                             })}
                         >
                             <img src={image.src} alt={image.alt} className="absolute inset-0 object-cover " />

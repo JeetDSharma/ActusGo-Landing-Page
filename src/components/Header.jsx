@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Globe, Sun, Moon, ChevronDown, ChevronUp, Cpu, Shield, Gamepad2, TicketPercent, Binoculars } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
+import theme from '@material-tailwind/react/theme';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  const {theme, setTheme} = useTheme()
   const [featuresOpen, setFeaturesOpen] = useState(false);
   const { t, i18n } = useTranslation();
 
