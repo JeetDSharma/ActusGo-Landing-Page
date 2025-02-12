@@ -12,7 +12,7 @@ const Header80Text = () => {
   const { heading, description } = headerData[i18n.language] || headerData.en;
 
   return (
-    <div className="container relative flex h-full items-center justify-center"
+    <div className="container relative flex h-full items-center justify-center z-[20]"
       dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="text-center">
         <h1 className="mb-5 text-4xl font-bold dark:text-white md:text-6xl">{heading}</h1>
